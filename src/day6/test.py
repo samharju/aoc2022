@@ -1,9 +1,10 @@
 from collections import namedtuple
 
 import pytest
-from asd import solve
 
-testcase = namedtuple("TestCase", ["input", "seqlen", "expected"])
+from .asd import solve
+
+testcase = namedtuple("testcase", ["input", "seqlen", "expected"])
 
 tcs = [
     testcase("mjqjpqmgbljsphdztnvjfqwrcgsmlb", 4, 7),

@@ -1,4 +1,4 @@
-from asd import solve
+from .asd import solve
 
 
 def test_part1():
