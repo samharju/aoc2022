@@ -1,7 +1,7 @@
 from .asd import solve
 
 
-def test_part1():
+def test_part1() -> None:
     data = (
         "    [D]    \n"
         "[N] [C]    \n"
@@ -14,4 +14,4 @@ def test_part1():
     )
     print(data)
 
-    assert solve(data) == "CMZ"
+    assert solve(data, "CrateMover 9000") == "CMZ"

@@ -21,5 +21,5 @@ tcs = [
 
 
 @pytest.mark.parametrize("tc", tcs)
-def test_all(tc):
+def test_all(tc: testcase) -> None:
     assert solve(tc.input, tc.seqlen) == tc.expected

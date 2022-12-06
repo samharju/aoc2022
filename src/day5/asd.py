@@ -4,7 +4,7 @@ I wanted to try handling input data as lists and fiddle with
 indices and handling it in batches. Seems to work."""
 
 
-def solve(data, crane):
+def solve(data: str, crane: str) -> str:
 
     # separate initial stacks and instructions
     stackstr, cmdstr = data.split("\n\n")

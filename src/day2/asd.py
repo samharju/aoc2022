@@ -1,24 +1,22 @@
-from itertools import permutations
-
-
-def solve(data: str):
-    return eval(
-        data.replace(" ", "")
-        .replace("AY", "8")
-        .replace("BZ", "9")
-        .replace("CX", "7")
-        .replace("AZ", "3")
-        .replace("BX", "1")
-        .replace("CY", "2")
-        .replace("AX", "4")
-        .replace("BY", "5")
-        .replace("CZ", "6")
-        .replace("\n", "+")
+def solve(data: str) -> int:
+    return int(
+        eval(
+            data.replace(" ", "")
+            .replace("AY", "8")
+            .replace("BZ", "9")
+            .replace("CX", "7")
+            .replace("AZ", "3")
+            .replace("BX", "1")
+            .replace("CY", "2")
+            .replace("AX", "4")
+            .replace("BY", "5")
+            .replace("CZ", "6")
+            .replace("\n", "+")
+        )
     )
 
 
-def solve2(data: str):
-
+def solve2(data: str) -> int:
     return solve(
         data.replace("A X", "AZ")
         .replace("A Y", "AX")

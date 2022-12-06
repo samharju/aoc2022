@@ -1,7 +1,7 @@
 from .asd import solve, solve2
 
 
-def test_part1():
+def test_part1() -> None:
 
     data = """2-4,6-8
 2-3,4-5
@@ -12,7 +12,7 @@ def test_part1():
     assert solve(data) == 2
 
 
-def test_part2():
+def test_part2() -> None:
 
     data = """2-4,6-8
 2-3,4-5
