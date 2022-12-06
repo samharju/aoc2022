@@ -6,9 +6,5 @@
     },
     "python.linting.mypyEnabled": true,
     "python.linting.flake8Enabled": true,
-    "python.linting.flake8Args": [
-        "--extend-ignore=E203",
-        "--max-line-len=88"
-    ],
     "python.formatting.provider": "black",
 }
