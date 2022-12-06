@@ -1,4 +1,8 @@
-from .asd import solve
+from pathlib import Path
+
+from day5 import solve
+
+puzzle = (Path(__file__).parent / "input1.txt").read_text()
 
 
 def test_part1() -> None:
@@ -12,6 +16,12 @@ def test_part1() -> None:
         "move 2 from 2 to 1\n"
         "move 1 from 1 to 2\n"
     )
-    print(data)
-
     assert solve(data, "CrateMover 9000") == "CMZ"
+
+
+def test_solution_1() -> None:
+    assert solve(puzzle, "CrateMover 9000") == "TLNGFGMFN"
+
+
+def test_solution_2() -> None:
+    assert solve(puzzle, "CrateMover 9001") == "FGLQJCMBD"

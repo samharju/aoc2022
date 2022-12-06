@@ -2,6 +2,7 @@
 
 I wanted to try handling input data as lists and fiddle with
 indices and handling it in batches. Seems to work."""
+from pathlib import Path
 
 
 def solve(data: str, crane: str) -> str:
@@ -45,7 +46,6 @@ def solve(data: str, crane: str) -> str:
 
 
 if __name__ == "__main__":
-    with open("input1.txt") as f:
-        data = f.read()
-        print(solve(data, "CrateMover 9000"))
-        print(solve(data, "CrateMover 9001"))
+    data = (Path(__file__).parent / "input1.txt").read_text()
+    print(solve(data, "CrateMover 9000"))
+    print(solve(data, "CrateMover 9001"))

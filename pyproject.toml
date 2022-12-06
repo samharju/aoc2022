@@ -5,4 +5,3 @@ profile = 'black'
 
 [tool.mypy]
 strict = true
-explicit_package_bases = true

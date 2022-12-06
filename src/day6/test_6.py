@@ -1,8 +1,9 @@
 from collections import namedtuple
+from pathlib import Path
 
 import pytest
 
-from .asd import solve
+from day6 import solve
 
 testcase = namedtuple("testcase", ["input", "seqlen", "expected"])
 
@@ -21,5 +22,16 @@ tcs = [
 
 
 @pytest.mark.parametrize("tc", tcs)
-def test_all(tc: testcase) -> None:
+def test_examples(tc: testcase) -> None:
     assert solve(tc.input, tc.seqlen) == tc.expected
+
+
+puzzle = (Path(__file__).parent / "input1.txt").read_text()
+
+
+def test_solution_1() -> None:
+    assert solve(puzzle, 4) == 1034
+
+
+def test_solution_2() -> None:
+    assert solve(puzzle, 14) == 2472

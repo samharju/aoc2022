@@ -11,10 +11,3 @@ def solve(data: str) -> int:
 def solve2(data: str) -> int:
     pairs = [d.split(",") for d in data.split("\n")]
     return sum([bool(vals(x) & vals(y)) for x, y in pairs])
-
-
-if __name__ == "__main__":
-    with open("input1.txt") as f:
-        data = f.read()
-        print(solve(data))
-        print(solve2(data))

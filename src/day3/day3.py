@@ -17,10 +17,3 @@ def solve2(data: str) -> int:
             for d in set(g[0]) & set(g[1]) & set(g[2])
         ]
     )
-
-
-if __name__ == "__main__":
-    with open("input1.txt") as f:
-        d = f.read()
-        print(solve(d))
-        print(solve2(d))

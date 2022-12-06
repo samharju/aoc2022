@@ -6,7 +6,7 @@ def solve(data: str, seqlen: int) -> int:
 
 
 if __name__ == "__main__":
-    with open("input1.txt") as f:
+    with open("src/day6/input1.txt") as f:
         data = f.read()
         print(solve(data, 4))
         print(solve(data, 14))
