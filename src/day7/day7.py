@@ -12,25 +12,23 @@ def build_fs(data: str) -> dict[str, int]:
             if cmd_tokens[1] == "..":
                 # /asd/pasd/ => cd .. => /asd/
                 cursor = cursor.rsplit("/", 2)[0] + "/"
-                continue
             elif cmd_tokens[1] == "/":
                 # jump to root
                 cursor = "/"
-                continue
-            # /asd/ => cd pasd => /asd/pasd/
-            cursor = cursor + cmd_tokens[1] + "/"
+            else:
+                # /asd/ => cd pasd => /asd/pasd/
+                cursor = cursor + cmd_tokens[1] + "/"
 
         elif cmd_tokens[0] == "ls":
             files = output.strip("\n").split("\n")
             for f in files:
-                tokens = f.split(" ")
-                fname = cursor + tokens[1]
-                if tokens[0] == "dir":
+                info, basename = f.split(" ")
+                fname = cursor + basename
+                if info == "dir":
                     # append slash to detect dir roots
-                    if (fname := fname + "/") not in fs:
-                        fs[fname] = 0
+                    fs[fname + "/"] = 0
                 else:
-                    fs[fname] = int(tokens[0])
+                    fs[fname] = int(info)
 
     # add folder sizes by summing files in subpaths
     for k, v in fs.items():
